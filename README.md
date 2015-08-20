@@ -1,5 +1,5 @@
 # imfc_gsTable
-Table with the number of league match started for the Montreal Impact in the MLS. Using d3.
+Table with the number of league match started for the Montreal Impact in the MLS. Using d3 and a dynamic colour_scale.
 
 The original idea is from Constantinos Chappas (@cchappas).
 
