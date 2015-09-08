@@ -14,6 +14,7 @@
     th, td { padding: 0.5ex 1em 0.5ex 1em;}
     th.center, td.center { text-align: center; }
     th.num, td.num { text-align: right; }
+    /*.dashedLine { stroke:red; stroke-width:2px; stroke-dasharray:2px 2px; }*/
     </style>
 </head>
 <body>
@@ -28,19 +29,19 @@
         { player: "Alessandro Nesta", 2012: 8, 2013: 23},
         { player: "Andrew Wenger", 2012: 7, 2013: 8, 2014: 3},
         { player: "Bernardo Corradi", 2012: 7},
-        { player: "Calum Mallace", 2012: 4, 2014: 12, 2015: 15},
+        { player: "Calum Mallace", 2012: 4, 2014: 12, 2015: 18},
         { player: "Collen Warner", 2012: 27, 2013: 9, 2014: 9},
         { player: "Davy Arnaud", 2012: 31, 2013: 21},
         { player: "Dennis Iapichino", 2012: 5, 2013: 7},
         { player: "Donovan Ricketts", 2012: 24},
         { player: "Eduardo Sebrango", 2012: 1},
-        { player: "Evan Bush", 2012: 1, 2013: 1, 2014: 13, 2015: 20},
+        { player: "Evan Bush", 2012: 1, 2013: 1, 2014: 13, 2015: 22},
         { player: "Felipe Martins", 2012: 30, 2013: 28, 2014: 28},
         { player: "Hassoun Camara", 2012: 19, 2013: 32, 2014: 26, 2015: 2},
         { player: "Jeb Brovsky", 2012: 25, 2013: 29, 2014: 7},
         { player: "Josh Gardner", 2012: 5},
         { player: "Justin Braun", 2012: 5},
-        { player: "Justin Mapp", 2012: 21, 2013: 25, 2014: 20, 2015: 1},
+        { player: "Justin Mapp", 2012: 21, 2013: 25, 2014: 20, 2015: 2},
         { player: "Lamar Neagle", 2012: 11},
         { player: "Marco Di Vaio", 2012: 16, 2013: 31, 2014: 17},
         { player: "Matteo Ferrari", 2012: 23, 2013: 31, 2014: 25},
@@ -54,35 +55,36 @@
         { player: "Tyson Wahl", 2012: 11},
         { player: "Zarek Valentin", 2012: 14},
         { player: "Andrea Pisanu", 2013: 8},
-        { player: "Andres Romero", 2013: 20, 2014: 25, 2015: 16},
+        { player: "Andres Romero", 2013: 20, 2014: 25, 2015: 19},
         { player: "Daniele Paponi", 2013: 8},
         { player: "Hernan Bernardello", 2013: 8, 2014: 10},
         { player: "Karl Ouimette", 2013: 6, 2014: 9},
-        { player: "Maxim Tissot", 2013: 3, 2014: 7, 2015: 4},
-        { player: "Wandrille Lefevre", 2013: 4, 2014: 13, 2015: 5},
+        { player: "Maxim Tissot", 2013: 3, 2014: 7, 2015: 6},
+        { player: "Wandrille Lefevre", 2013: 4, 2014: 13, 2015: 7},
         { player: "Anthony Jackson-Hamel", 2014: 1},
-        { player: "Dilly Duka", 2014: 12, 2015: 13},
+        { player: "Dilly Duka", 2014: 12, 2015: 14},
         { player: "Eric Miller", 2014: 18, 2015: 4},
         { player: "Gorka Larrea", 2014: 5},
         { player: "Heath Pearce", 2014: 20},
-        { player: "Ignacio Piatti", 2014: 6, 2015: 20},
+        { player: "Ignacio Piatti", 2014: 6, 2015: 21},
         { player: "Issey Nakajima-Farran", 2014: 5},
         { player: "Jack McInerney", 2014: 21, 2015: 13},
         { player: "Jeremy Gagnon-Lapare", 2014: 3},
         { player: "Krzysztof Krol", 2014: 11},
         { player: "Mamadou Danso", 2014: 3},
-        { player: "Ambroise Oyongo", 2015: 13},
+        { player: "Ambroise Oyongo", 2015: 15},
         { player: "Bakary Soumare", 2015: 9},
         { player: "Cameron Porter", 2015: 1},
-        { player: "Dominic Oduro", 2015: 10},
-        { player: "Donny Toia", 2015: 17},
+        { player: "Dominic Oduro", 2015: 12},
+        { player: "Donny Toia", 2015: 20},
         { player: "Eric Alexander", 2015: 8},
-        { player: "Eric Kronberg", 2015: 1},
-        { player: "Johan Venegas", 2015: 1},
-        { player: "Laurent Ciman", 2015: 19},
-        { player: "Marco Donadel", 2015: 14},
-        { player: "Nigel Reo-Coker", 2015: 10},
-        { player: "Victor Cabrera", 2015: 12}
+        { player: "Eric Kronberg", 2015: 2},
+        { player: "Johan Venegas", 2015: 3},
+        { player: "Laurent Ciman", 2015: 21},
+        { player: "Marco Donadel", 2015: 17},
+        { player: "Nigel Reo-Coker", 2015: 11},
+        { player: "Victor Cabrera", 2015: 13},
+        { player: "Didier Drogba", 2015: 1}
     ];
 
     // column definitions
@@ -124,8 +126,12 @@
         }).enter()
         .append('td')
         .html(ƒ('html'))
-        .style('background-color', function(d) {console.log(d); if (isNaN(d.html) == false) return colour_scale(d.html)})
-        .attr('class', ƒ('cl'));
+        .style('background-color', function(d) { if (isNaN(d.html) == false) return colour_scale(d.html)})
+        // .style('border-bottom-style', function(d) { if (d.html == undefined) return 'dashed'})
+        .attr('class', ƒ('cl'))
+        // .append('hr')
+        .attr('class', 'dashedLine')
+        .style('height', function(d) { if (d.html != undefined) return '0px'});
 
     function length() {
         var fmt = d3.format('02d');
